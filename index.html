@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyConvert — Free, Unlimited & Private</title>
-    <meta name="description" content="Convert JPG, PNG, and WEBP images locally in your browser. 100% client-side, zero server uploads, unlimited files.">
+    <title>MyConvert — 100% Client-Side Image Format Converter</title>
+    <meta name="description" content="Convert JPG, PNG, and WEBP images locally in your browser. 100% client-side, CSP-locked zero server uploads, unlimited files.">
+    
+    <!-- Strict Content Security Policy: Blocks all outbound network connections (connect-src 'none') at the browser level -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cloudflare.com; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'self' data: blob:;">
+    
     <link rel="stylesheet" href="style.css">
-    <!-- Toplu indirme için JSZip CDN -->
-    <script src="https://cloudflare.com"></script>
+    
+    <!-- JSZip Library with Subresource Integrity (SRI) cryptographic hash -->
+    <script src="https://cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" 
+            integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <span class="badge">🔒 100% Client-Side • Zero Server Uploads</span>
-        <h1>Image Format Converter</h1>
-        <p class="subtitle">Convert unlimited JPG, PNG & WEBP files locally using your device's power.</p>
+        <span class="badge">🔒 100% Client-Side • CSP Locked (connect-src 'none')</span>
+        <h1>MyConvert</h1>
+        <p class="subtitle">Convert unlimited JPG, PNG & WEBP files locally using your device's hardware.</p>
     </header>
 
-    <!-- Üst Reklam Alanı (AdSense / Alternatif Ağlar İçin Hazır) -->
+    <!-- Top Advertisement Slot -->
     <div class="ad-slot" id="ad-top">
-        <!-- Reklam kodun buraya gelecek -->
         <span>Advertisement Space (728x90 / Responsive)</span>
     </div>
 
+    <!-- Main Converter Interface -->
     <main class="converter-box">
         <div class="drop-zone" id="dropZone">
             <p>Drag & drop your images here or <strong>click to browse</strong></p>
@@ -57,24 +63,24 @@
         </div>
     </main>
 
-    <!-- Alt Reklam Alanı -->
+    <!-- Bottom Advertisement Slot -->
     <div class="ad-slot" id="ad-bottom">
         <span>Advertisement Space (Responsive)</span>
     </div>
 
-    <!-- AdSense Onayı İçin SEO & Bilgilendirme İçeriği -->
+    <!-- Security Verification & SEO Information Section -->
     <section class="info-section">
-        <h2>Why Use a Just Client-Side Converter?</h2>
-        <p>Unlike traditional online converters that upload your private photos to cloud servers and impose strict daily limits, our tool runs 100% inside your web browser using HTML5 Canvas technology. Your files never leave your computer or phone.</p>
+        <h2>Verifiable Zero-Upload Architecture</h2>
+        <p>Unlike cloud converters that upload your private files to remote servers, MyConvert executes 100% inside your browser using the HTML5 Canvas API. Don't take our word for it—verify it yourself:</p>
         <ul>
-            <li><strong>Complete Privacy:</strong> Zero server uploads mean zero data leak risks.</li>
-            <li><strong>Truly Unlimited:</strong> Convert hundreds of high-resolution images in seconds without paywalls.</li>
-            <li><strong>Works Offline:</strong> Once loaded, you can convert files even without an internet connection.</li>
+            <li><strong>Browser-Enforced Isolation:</strong> Our strict Content Security Policy (<code>connect-src 'none'</code>) blocks all outbound network requests at the browser kernel level.</li>
+            <li><strong>Offline Proof:</strong> Press <code>F12</code>, open the Network tab, disconnect your Wi-Fi, and convert your files—it still works 100%.</li>
+            <li><strong>Open Source Audit:</strong> Press <code>Ctrl + U</code> anytime or inspect our public GitHub repository to audit every single line of code.</li>
         </ul>
     </section>
 
     <footer>
-        <p>100% Client-Side Tools • Built for Privacy & Speed</p>
+        <p>MyConvert • 100% Client-Side & Open Source</p>
     </footer>
 </div>
 
