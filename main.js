@@ -22,7 +22,6 @@ targetFormat.addEventListener('change', () => {
 });
 
 // Sürükle - Bırak olayları
-dropZone.addEventListener('click', () => fileInput.click());
 dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
 dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
 dropZone.addEventListener('drop', (e) => {
