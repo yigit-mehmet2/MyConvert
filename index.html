@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Client-Side Image Converter — Free, Unlimited & Private</title>
+    <meta name="description" content="Convert JPG, PNG, and WEBP images locally in your browser. 100% client-side, zero server uploads, unlimited files.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Toplu indirme için JSZip CDN -->
+    <script src="https://cloudflare.com"></script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="badge">🔒 100% Client-Side • Zero Server Uploads</span>
+        <h1>Image Format Converter</h1>
+        <p class="subtitle">Convert unlimited JPG, PNG & WEBP files locally using your device's power.</p>
+    </header>
+
+    <!-- Üst Reklam Alanı (AdSense / Alternatif Ağlar İçin Hazır) -->
+    <div class="ad-slot" id="ad-top">
+        <!-- Reklam kodun buraya gelecek -->
+        <span>Advertisement Space (728x90 / Responsive)</span>
+    </div>
+
+    <main class="converter-box">
+        <div class="drop-zone" id="dropZone">
+            <p>Drag & drop your images here or <strong>click to browse</strong></p>
+            <span class="hint">Supports JPG, PNG, WEBP, BMP, ICO — No file size or daily limits</span>
+            <input type="file" id="fileInput" accept="image/*" multiple hidden>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="targetFormat">Target Format:</label>
+                <select id="targetFormat">
+                    <option value="image/jpeg">JPG (.jpg)</option>
+                    <option value="image/png">PNG (.png)</option>
+                    <option value="image/webp">WEBP (.webp)</option>
+                </select>
+            </div>
+
+            <div class="control-group" id="qualityGroup">
+                <label for="qualitySlider">Quality: <span id="qualityVal">92%</span></label>
+                <input type="range" id="qualitySlider" min="10" max="100" value="92">
+            </div>
+
+            <button id="convertBtn" class="btn-primary" disabled>Convert All</button>
+        </div>
+
+        <ul id="fileList" class="file-list"></ul>
+
+        <div id="batchActions" class="batch-actions hidden">
+            <button id="downloadZipBtn" class="btn-success">📦 Download All as ZIP</button>
+        </div>
+    </main>
+
+    <!-- Alt Reklam Alanı -->
+    <div class="ad-slot" id="ad-bottom">
+        <span>Advertisement Space (Responsive)</span>
+    </div>
+
+    <!-- AdSense Onayı İçin SEO & Bilgilendirme İçeriği -->
+    <section class="info-section">
+        <h2>Why Use a Just Client-Side Converter?</h2>
+        <p>Unlike traditional online converters that upload your private photos to cloud servers and impose strict daily limits, our tool runs 100% inside your web browser using HTML5 Canvas technology. Your files never leave your computer or phone.</p>
+        <ul>
+            <li><strong>Complete Privacy:</strong> Zero server uploads mean zero data leak risks.</li>
+            <li><strong>Truly Unlimited:</strong> Convert hundreds of high-resolution images in seconds without paywalls.</li>
+            <li><strong>Works Offline:</strong> Once loaded, you can convert files even without an internet connection.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>100% Client-Side Tools • Built for Privacy & Speed</p>
+    </footer>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
